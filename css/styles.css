@@ -764,26 +764,32 @@ color: var(--secondary-text-color);
  /* MODAL */
 
  .backdrop {
- position: fixed;
- width: 100%;
- height: 100%;
- background-color: rgba(0, 0, 0, 0.2);
- z-index: 2;
+    position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+z-index: 2;
+
+ background-color: rgba(0, 0, 0, 0.8);
  opacity:1;
-transition: opacity 1000ms linear;
- }
+transition: opacity 250ms linear;
+
+}
 
  .backdrop.is-hidden {
-    visibility: hidden;
-   opacity: 0;
-   pointer-events:none; 
+visibility: hidden;
+opacity: 0;
+pointer-events:none; 
+
+
  }
 
  .modal {
-    position: absolute;
-    top: 50%21px;
-    left: 50%;
-    transform: translate(-50%, 50%) scale(1);
+    position: relative;   
     width: 528px;
     height: 581px;
     border-radius: 4px;
@@ -792,11 +798,14 @@ transition: opacity 1000ms linear;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     background-color: #FFFFFF;
     opacity: 1.0;
+    scale: 1.0;
+    transition: opacity 250ms linear, transform 1000ms linear;
     
  }
 
  .backdrop.is-hidden .modal {
-    transform: scale(0.9);
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
  }
 
  .modal-close {
@@ -810,3 +819,5 @@ transition: opacity 1000ms linear;
  .modal-close-svg {
     border: 1px solid rgba(0, 0, 0, 0.1);
  }
+
+ 
