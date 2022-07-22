@@ -778,6 +778,7 @@ z-index: 2;
  background-color: rgba(0, 0, 0, 0.8);
  opacity:1;
 transition: opacity 250ms linear;
+visibility: visible;
 
 }
 
@@ -801,7 +802,7 @@ pointer-events:none;
     opacity: 1.0;
     scale: 1.0;
     transition: opacity 250ms linear, transform 1000ms linear;
-    
+    visibility: visible;
  }
 
  .backdrop.is-hidden .modal {
